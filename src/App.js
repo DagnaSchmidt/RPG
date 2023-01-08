@@ -4,6 +4,7 @@ import Welcome from './Components/Welcome';
 import LogIn from './Components/LogIn';
 import SignIn from './Components/SignIn';
 import NewAdventure from './Components/NewAdventure';
+import "./styles/Welcome.css";
 
 function App() {
   return (

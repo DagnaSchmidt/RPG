@@ -1,20 +1,25 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import welcomeImg from "../assets/images/pokemon.gif";
+import Button from "react-bootstrap/Button";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Welcome = () => {
   return (
-    <section>
-      <img />
-      <h1>Pokemon Battles</h1>
-      <button>
-        <Link to="/login">Log In</Link>
-      </button>
-      <button>
-        <Link to="/signin">Sign In</Link>
-      </button>
-      <button>
-        <Link to="/newadventure">New Adventure</Link>
-      </button>
+    <section className="welcome">
+      <h1 className='welcome-heading'>Pokemon Battles</h1>
+      <img src={welcomeImg} alt="pokemon pic"/>
+      <div className='welcome-btns'>
+        <Button className='welcome-btn'>
+          <Link className='btn-link' to="/login">Log In</Link>
+        </Button>
+        <Button className='welcome-btn'>
+          <Link className='btn-link' to="/signin">Sign In</Link>
+        </Button>
+        <Button className='welcome-btn'>
+          <Link className='btn-link' to="/newadventure">New Adventure</Link>
+        </Button>
+      </div>
     </section>
   )
 }
