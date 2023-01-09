@@ -35,7 +35,7 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
   return (
     <section className="welcome">
       {form ? 
-      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
+      <div><form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
         <label htmlFor='username'>Enter username</label>
         <input
           id='username'
@@ -56,9 +56,13 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
           Sign Up
         </button>
       </form>
+      <button className='welcome-btn btn-link'>
+        <Link to="/">return</Link>
+      </button>
+      </div>
        : 
        <div>
-        {name !== "" && <div>
+        {name !== "" ? <div>
           <h3>Welcome {name}! Your account has been created.</h3>
           <h5>Your current stats:</h5>
           <p>Total points: {score}</p>
@@ -68,12 +72,17 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
             <Link to="/newadventure">Start new adventure</Link>
           </button>
           <button onClick={logOut} className='welcome-btn btn-link'>Log out</button>
-        </div>  }
+        </div> : 
+        <div>
+          <h4>You are logged out!</h4>
+          <button className='welcome-btn btn-link'>
+            <Link to="/">return</Link>
+          </button>
         </div>
         }
-      <button className='welcome-btn btn-link'>
-        <Link to="/">return</Link>
-      </button>
+        </div>
+        }
+      
     </section>
   )
 }
