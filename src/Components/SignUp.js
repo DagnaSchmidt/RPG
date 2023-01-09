@@ -33,9 +33,9 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
   }
 
   return (
-    <section>
+    <section className="welcome">
       {form ? 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
         <label htmlFor='username'>Enter username</label>
         <input
           id='username'
@@ -52,7 +52,7 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
           placeholder='type your password here'
           onChange={handleChange}
         />
-        <button type='submit'>
+        <button type='submit' className='welcome-btn btn-link'>
           Sign Up
         </button>
       </form>
@@ -64,14 +64,14 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
           <p>Total points: {score}</p>
           <p>Battles won: {battlesWon}</p>
           <p>Battles lost: {battlesLost}</p>
-          <button>
+          <button className='welcome-btn btn-link'>
             <Link to="/newadventure">Start new adventure</Link>
           </button>
-          <button onClick={logOut}>Log out</button>
+          <button onClick={logOut} className='welcome-btn btn-link'>Log out</button>
         </div>  }
         </div>
         }
-      <button>
+      <button className='welcome-btn btn-link'>
         <Link to="/">return</Link>
       </button>
     </section>
