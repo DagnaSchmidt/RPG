@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWon, setBattlesWon, battlesLost, setBattlesLost, usersList, setUsersList, logOut}) => {
   const [formData, setFormData] = React.useState(
     {
@@ -41,8 +42,8 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
   }
   
   return (
-    <section>
-      {notLoggedIn ? <form onSubmit={handleSubmit}>
+    <section className="welcome">
+      {notLoggedIn ? <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
         <label htmlFor='username'>Enter username</label>
         <input
           id='username'
@@ -59,7 +60,7 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
           placeholder='type your password here'
           onChange={handleChange}
         />
-        <button>Log In</button>
+        <button className='welcome-btn btn-link'>Log In</button>
       </form>
       :
       <div>
@@ -69,14 +70,14 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
           <p>Total points: {score}</p>
           <p>Battles won: {battlesWon}</p>
           <p>Battles lost: {battlesLost}</p>
-          <button>
-            <Link to="/newadventure">Start new adventure</Link>
+          <button className='welcome-btn'>
+            <Link className='btn-link' to="/newadventure">Start new adventure</Link>
           </button>
-          <button onClick={logOut}>Log out</button>
+          <button onClick={logOut} className='welcome-btn btn-link'>Log out</button>
         </div>  }
       </div> }
-      <button>
-        <Link to="/">return</Link>
+      <button className='welcome-btn'>
+        <Link className='btn-link' to="/">return</Link>
       </button>
     </section>
   )
