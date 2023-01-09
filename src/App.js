@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Welcome />} />
           <Route path='/login' element={<LogIn name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
-          <Route path='/signin' element={<SignIn name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
+          <Route path='/signup' element={<SignUp name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
           <Route path='/newadventure' element={<NewAdventure />} />
         </Routes>
       </BrowserRouter>
