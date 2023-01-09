@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+.welcome {
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    font-family: VT323;
+}
+
+.welcome-heading {
+    font-weight: 700;
+    font-size: 80px;
+    text-align: center;
+}
+
+.welcome-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.welcome-btn {
+    margin: 20px;
+    background-color: black !important;
+}
+
+.btn-link {
+    text-decoration: none !important;
+    color: yellow !important;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.welcome-btn:hover {
+    background-color: yellow !important;
+    transform: scaleX(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-link:hover {
+    color: black !important;
+}

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Welcome from './Components/Welcome';
 import LogIn from './Components/LogIn';
-import SignIn from './Components/SignIn';
+import SignUp from './Components/SignUp';
 import NewAdventure from './Components/NewAdventure';
+import "./styles/Welcome.css";
 
 function App() {
   const [name, setName] = useState("");
@@ -36,7 +37,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Welcome />} />
           <Route path='/login' element={<LogIn name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
-          <Route path='/signin' element={<SignIn name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
+          <Route path='/signup' element={<SignUp name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
           <Route path='/newadventure' element={<NewAdventure />} />
         </Routes>
       </BrowserRouter>
