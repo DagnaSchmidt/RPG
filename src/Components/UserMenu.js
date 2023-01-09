@@ -26,9 +26,6 @@ const UserMenu = ({logOut}) => {
             </div>
             <div className='welcome-btns'>
                 <Button className='welcome-btn'>
-                <Link className='btn-link' to="/continueadventure">Continue Adventure</Link>
-                </Button>
-                <Button className='welcome-btn'>
                 <Link className='btn-link' to="/newadventure">New Adventure</Link>
                 </Button>
                 <Button className='welcome-btn'>
