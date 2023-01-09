@@ -4,7 +4,7 @@ import Welcome from './Components/Welcome';
 import LogIn from './Components/LogIn';
 import SignUp from './Components/SignUp';
 import NewAdventure from './Components/NewAdventure';
-import "./styles/Welcome.css";
+import "./Styles/Welcome.css";
 
 function App() {
   const [name, setName] = useState("");
