@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom';
 
-const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWon, setBattlesWon, battlesLost, setBattlesLost, usersList, setUsersList, logOut}) => {
+const SignIn = ({name, setName, password, setPassword, score, setScore, battlesWon, setBattlesWon, battlesLost, setBattlesLost, usersList, setUsersList, logOut}) => {
   const [formData, setFormData] = React.useState(
     {
       name: "", 
@@ -9,6 +9,8 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
     }
   )
 
+  const [form, setForm] = React.useState(true);
+  
   function handleChange(event){
     const {name, value} = event.target
     setFormData(prevFormData => {
@@ -19,37 +21,28 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
     })
   }
 
-  const [notLoggedIn, setNotLoggedIn] = React.useState(true)
-
   function handleSubmit(event){
     event.preventDefault();
-
-    const foundUser = usersList.filter((user) => user.name === formData.name && user.password === formData.password)
-    const newUsersList = usersList.filter((user) => user.name !== formData.name)
-    setUsersList(newUsersList);
-
-    setName(foundUser[0].name);
-    setPassword(foundUser[0].password)
-    setScore(foundUser[0].score)
-    setBattlesWon(foundUser[0].battlesWon)
-    setBattlesLost(foundUser[0].battlesLost)
-
-    setNotLoggedIn(false)
-
-    console.log(foundUser)
-    console.log(usersList)
+    //create function to check if username already doesn't exist in database
+    setName(formData.name);
+    setPassword(formData.password);
+    setScore(0);
+    setBattlesWon(0);
+    setBattlesLost(0);
+    setForm(false);
   }
-  
+
   return (
     <section>
-      {notLoggedIn ? <form onSubmit={handleSubmit}>
+      {form ? 
+      <form onSubmit={handleSubmit}>
         <label htmlFor='username'>Enter username</label>
         <input
           id='username'
           name='name'
           type='text'
-          placeholder='type your username here'
-          onChange={handleChange} 
+          placeholder='type your username here' 
+          onChange={handleChange}
         />
         <label htmlFor='password'>Enter password</label>
         <input
@@ -59,12 +52,14 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
           placeholder='type your password here'
           onChange={handleChange}
         />
-        <button>Log In</button>
+        <button type='submit'>
+          Sign In
+        </button>
       </form>
-      :
-      <div>
+       : 
+       <div>
         {name !== "" && <div>
-          <h3>Welcome back {name}!</h3>
+          <h3>Welcome {name}! Your account has been created.</h3>
           <h5>Your current stats:</h5>
           <p>Total points: {score}</p>
           <p>Battles won: {battlesWon}</p>
@@ -74,7 +69,8 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
           </button>
           <button onClick={logOut}>Log out</button>
         </div>  }
-      </div> }
+        </div>
+        }
       <button>
         <Link to="/">return</Link>
       </button>
@@ -82,4 +78,4 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
   )
 }
 
-export default LogIn
+export default SignIn;
