@@ -4,6 +4,7 @@ import Welcome from './Components/Welcome';
 import LogIn from './Components/LogIn';
 import SignUp from './Components/SignUp';
 import NewAdventure from './Components/NewAdventure';
+import UserMenu from "./Components/UserMenu";
 import "./styles/Welcome.css";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path='/login' element={<LogIn name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
           <Route path='/signup' element={<SignUp name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
           <Route path='/newadventure' element={<NewAdventure />} />
+          <Route path='/usermenu' element={<UserMenu logOut={logOut}/>} />
         </Routes>
       </BrowserRouter>
     </div>
