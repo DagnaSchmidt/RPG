@@ -77,6 +77,9 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
           <button className='welcome-btn'>
             <Link className='btn-link' to="/newadventure">Start new adventure</Link>
           </button>
+          <button className='welcome-btn'>
+            <Link className='btn-link' to="/usermenu">User menu</Link>
+          </button>
           <button onClick={logOut} className='welcome-btn btn-link'>Log out</button>
         </div> 
         :
