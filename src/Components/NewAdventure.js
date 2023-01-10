@@ -1,8 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NewAdventure = () => {
+const NewAdventure = ({name}) => {
   return (
-    <div>NewAdventure</div>
+    <section className='welcome'>
+      {name === "" ? 
+      <div>
+        <h3>You are not logged in!</h3>
+        <p>You need to log in to your account or create a new one to start new adventure</p>
+        <button className='welcome-btn'>
+          <Link className='btn-link' to="/login">Log In</Link>
+        </button>
+        <button className='welcome-btn'>
+          <Link className='btn-link' to="/signup">Sign Up</Link>
+        </button>
+      </div> 
+      : 
+      <div>
+        CHARACTER SELECTION HERE 
+      </div> }
+    </section>
+
   )
 }
 
