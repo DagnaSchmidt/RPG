@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CharacterSelection from './CharacterSelection';
 
 const NewAdventure = ({name}) => {
   return (
@@ -17,7 +18,7 @@ const NewAdventure = ({name}) => {
       </div> 
       : 
       <div>
-        CHARACTER SELECTION HERE 
+        <CharacterSelection />
       </div> }
     </section>
 
