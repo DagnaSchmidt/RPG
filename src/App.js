@@ -41,7 +41,7 @@ function App() {
           <Route path='/' element={<Welcome />} />
           <Route path='/login' element={<LogIn name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
           <Route path='/signup' element={<SignUp name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
-          <Route path='/newadventure' element={<NewAdventure />} />
+          <Route path='/newadventure' element={<NewAdventure name={name} />} />
           <Route path='/usermenu' element={<UserMenu logOut={logOut}/>} />
           <Route path='/characterselection' element={<CharacterSelection />} />
         </Routes>
