@@ -34,6 +34,13 @@ function App() {
     console.log(newUser, usersList)
   }
 
+  const [characterName, setCharacterName] = useState("");
+  const [characterLifePoints, setCharacterLifePoints] = useState(0);
+  const [characterImage, setCharacterImage] = useState("");
+  const [opponentName, setOpponentName] = useState("");
+  const [opponentLifePoints, setOpponentLifePoints] = useState(0);
+  const [opponentImage, setOpponentImage] = useState("");
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -41,7 +48,7 @@ function App() {
           <Route path='/' element={<Welcome />} />
           <Route path='/login' element={<LogIn name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
           <Route path='/signup' element={<SignUp name={name} setName={setName} password={password} setPassword={setPassword} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} usersList={usersList} setUsersList={setUsersList} logOut={logOut} />} />
-          <Route path='/newadventure' element={<NewAdventure name={name} />} />
+          <Route path='/newadventure' element={<NewAdventure name={name} characterName={characterName} setCharacterName={setCharacterName} characterLifePoints={characterLifePoints} setCharacterLifePoints={setCharacterLifePoints} characterImage={characterImage} setCharacterImage={setCharacterImage} opponentName={opponentName} setOpponentName={setOpponentName} opponentLifePoints={opponentLifePoints} setOpponentLifePoints={setOpponentLifePoints} opponentImage={opponentImage} setOpponentImage={setOpponentImage} />} />
           <Route path='/usermenu' element={<UserMenu logOut={logOut}/>} />
           <Route path='/characterselection' element={<CharacterSelection />} />
         </Routes>
