@@ -47,6 +47,14 @@ function App() {
   const [opponentLifePoints, setOpponentLifePoints] = useState(0);
   const [opponentImage, setOpponentImage] = useState("");
 
+
+  useEffect(()=>{
+		setCharacterName(yourPokemon.name);
+    setCharacterImage(yourPokemon.image);
+    setOpponentName(oppoPokemon.name);
+    setOpponentImage(oppoPokemon.image);
+	}, [oppoPokemon, yourPokemon])
+
   return (
     <div className="App">
       <BrowserRouter>
