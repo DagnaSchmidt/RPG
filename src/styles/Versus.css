@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+.versus-heading {
+    font-family: VT323;
+    font-size: 80px;
+    font-weight: 700;
+    text-align: center;
+} 
+
+.versus {
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: VT323;
+}
+
+.versus-text {
+    font-size: 60px;
+    font-family: VT323;
+}
+
+.middle-versus {
+    font-size: 150px;
+    color: yellow;
+    text-shadow: 5px 1px 5px red;
+}
+
+.versus-img {
+    width: 200px;
+    height: 200px;
+}
+
+.versus-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.select-pokemon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: VT323;
+}

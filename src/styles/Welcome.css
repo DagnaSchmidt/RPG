@@ -31,7 +31,8 @@
     text-decoration: none !important;
     color: yellow !important;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 30px;
+    font-family: VT323;
 }
 
 .welcome-btn:hover {
