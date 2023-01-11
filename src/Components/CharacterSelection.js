@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import Fetch from "./Fetch"; 
 
 const CharacterSelection = ({name, yourPokemon, setYourPokemon}) => {
-
-    // const [yourPokemon, setYourPokemon] = useState("");
-
-
     return (
         <>
         {name === "" ?

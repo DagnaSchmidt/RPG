@@ -17,7 +17,7 @@ const Welcome = () => {
           <Link className='btn-link' to="/signup">Sign Up</Link>
         </Button>
         <Button className='welcome-btn'>
-          <Link className='btn-link' to="/newadventure">New Adventure</Link>
+          <Link className='btn-link' to="/characterselection">New Adventure</Link>
         </Button>
       </div>
     </section>

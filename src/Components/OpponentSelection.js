@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import Fetch from "./Fetch"; 
 
 const OpponentSelection = ({oppoPokemon, setOppoPokemon}) => {
-
-    // const [oppoPokemon, setOppoPokemon] = useState("");
-
-
     return (
         <div className="characters-selection-body">
             <h1 className="title">Choose your Opponent</h1>
