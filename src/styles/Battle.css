@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+.battle-heading {
+    font-weight: 700;
+    font-size: 80px;
+    text-align: center;
+}
+
+.container-battle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 2rem;
+    width: 100%;
+}
+
+.container-battle-child {
+    position: relative;
+    margin: 20px;
+}
+
+.battle-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.battle-btn {
+    margin: 30px;
+    background-color: black !important;
+}
