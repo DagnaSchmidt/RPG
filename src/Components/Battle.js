@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
+//This pokemonImg will be removed once the actual images populated through the state
 import pokemonImg from "../assets/images/pokemon.gif";
 
 const Battle = ({ characterName, characterLifePoints, characterImage, opponentName, opponentLifePoints, opponentImage }) => {

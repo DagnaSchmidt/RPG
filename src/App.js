@@ -6,10 +6,10 @@ import SignUp from './Components/SignUp';
 import NewAdventure from './Components/NewAdventure';
 import UserMenu from "./Components/UserMenu";
 import CharacterSelection from "./Components/CharacterSelection";
+import Battle from "./Components/Battle";
 import "./styles/CharacterSelection.css";
 import "./styles/Welcome.css";
 import "./styles/Battle.css";
-import Battle from "./Components/Battle";
 
 function App() {
   const [name, setName] = useState("");
