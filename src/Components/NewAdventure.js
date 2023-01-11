@@ -19,12 +19,7 @@ const NewAdventure = ({ name }) => {
         </div>
         :
         <div>
-          <div>
             <CharacterSelection />
-          </div>
-          <div>
-            <Battle />
-          </div>
         </div>}
     </section>
 
