@@ -22,7 +22,8 @@ const Fetch = (props) => {
                 return {
                     id  : json.id,
                     name: character.name, 
-                    image: json.sprites.front_default
+                    image: json.sprites.front_default,
+                    lifePoints: json.base_experience
                 }
             })
         )
