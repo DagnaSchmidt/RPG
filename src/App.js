@@ -51,8 +51,10 @@ function App() {
   useEffect(()=>{
 		setCharacterName(yourPokemon.name);
     setCharacterImage(yourPokemon.image);
+    setCharacterLifePoints(yourPokemon.lifePoints)
     setOpponentName(oppoPokemon.name);
     setOpponentImage(oppoPokemon.image);
+    setOpponentLifePoints(oppoPokemon.lifePoints)
 	}, [oppoPokemon, yourPokemon])
 
   return (
