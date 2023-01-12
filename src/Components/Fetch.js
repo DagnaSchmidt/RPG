@@ -4,7 +4,7 @@ const pokemonsContainer = {
     pokemons: null
 }
 
-const Fetch = () => {
+const Fetch = (props) => {
     const [characters, setCharacters] = useState();
     const getCharacters = async () => {
         const randomNumber = generateRandomNumber();
@@ -20,12 +20,13 @@ const Fetch = () => {
                 const json = await response.json()
 
                 return {
+                    id  : json.id,
                     name: character.name, 
                     image: json.sprites.front_default
                 }
             })
         )
-  
+
         setCharacters(charactersWithImages)
     };
 
@@ -49,7 +50,7 @@ const Fetch = () => {
         <div className="characters-greed">
             {characters && characters.map((character) => 
                 <div>
-                    <p key={character.url}>
+                    <p key={character.id} onClick={()=>props.getPokemon(character)}>
                         <div className="container-characters">
                         {character.name}
                         <img src={character.image}></img>

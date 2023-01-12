@@ -69,7 +69,7 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
           <p>Battles won: {battlesWon}</p>
           <p>Battles lost: {battlesLost}</p>
           <button className='welcome-btn btn-link'>
-            <Link to="/newadventure">Start new adventure</Link>
+            <Link to="/characterselection">Start new adventure</Link>
           </button>
           <button className='welcome-btn'>
             <Link className='btn-link' to="/usermenu">User menu</Link>

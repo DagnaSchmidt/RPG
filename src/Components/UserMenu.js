@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import welcomeImg from "../assets/images/pokemon.gif";
 import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -26,7 +25,7 @@ const UserMenu = ({logOut}) => {
             </div>
             <div className='welcome-btns'>
                 <Button className='welcome-btn'>
-                <Link className='btn-link' to="/newadventure">New Adventure</Link>
+                <Link className='btn-link' to="/characterselection">New Adventure</Link>
                 </Button>
                 <Button className='welcome-btn'>
                 <Link onClick={() => {setAlert(true); logOut()}} className='btn-link'>Log Out</Link>
