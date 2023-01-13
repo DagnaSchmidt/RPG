@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Error.css';
 
 
 const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWon, setBattlesWon, battlesLost, setBattlesLost, usersList, setUsersList, logOut}) => {
@@ -22,49 +23,59 @@ const LogIn = ({name, setName, password, setPassword, score, setScore, battlesWo
 
   const [notLoggedIn, setNotLoggedIn] = React.useState(true)
 
+  const [error, setError] = React.useState(false)
+
   function handleSubmit(event){
     event.preventDefault();
+    const names = usersList.map((item) => item.name);
 
-    const foundUser = usersList.filter((user) => user.name === formData.name && user.password === formData.password)
-    const newUsersList = usersList.filter((user) => user.name !== formData.name)
-    setUsersList(newUsersList);
+    if(names.includes(formData.name)){
+      const foundUser = usersList.filter((user) => user.name === formData.name && user.password === formData.password)
+      const newUsersList = usersList.filter((user) => user.name !== formData.name)
+      setUsersList(newUsersList);
 
-    setName(foundUser[0].name);
-    setPassword(foundUser[0].password)
-    setScore(foundUser[0].score)
-    setBattlesWon(foundUser[0].battlesWon)
-    setBattlesLost(foundUser[0].battlesLost)
+      setName(foundUser[0].name);
+      setPassword(foundUser[0].password)
+      setScore(foundUser[0].score)
+      setBattlesWon(foundUser[0].battlesWon)
+      setBattlesLost(foundUser[0].battlesLost)
 
-    setNotLoggedIn(false)
-
-    console.log(foundUser)
-    console.log(usersList)
+      setNotLoggedIn(false)
+    }else{
+      setError(true)
+    }
   }
   
   return (
     <section className="welcome">
-      {notLoggedIn ? <div><form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
-        <label htmlFor='username'>Enter username</label>
-        <input
-          id='username'
-          name='name'
-          type='text'
-          placeholder='type your username here'
-          onChange={handleChange} 
-        />
-        <label htmlFor='password'>Enter password</label>
-        <input
-          id='password'
-          name='password'
-          type='text' 
-          placeholder='type your password here'
-          onChange={handleChange}
-        />
-        <button className='welcome-btn btn-link'>Log In</button>
-      </form>
-      <button className='welcome-btn btn-link'>
-        <Link to="/">return</Link>
-      </button>
+      {notLoggedIn ? 
+      <div style={{position: "relative"}}>
+        <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
+          <label htmlFor='username'>Enter username</label>
+          <input
+            id='username'
+            name='name'
+            type='text'
+            placeholder='type your username here'
+            onChange={handleChange} 
+          />
+          <label htmlFor='password'>Enter password</label>
+          <input
+            id='password'
+            name='password'
+            type='text' 
+            placeholder='type your password here'
+            onChange={handleChange}
+          />
+          <button className='welcome-btn btn-link'>Log In</button>
+        </form>
+        <button className='welcome-btn btn-link'>
+          <Link to="/">return</Link>
+        </button>
+        <div className={`error-message ${error && "display"}`} >
+          <h3>User name or password incorrect!</h3>
+          <button className='welcome-btn btn-link' onClick={() => setError(false)}>Return</button>
+        </div>
       </div>
       :
       <div>
