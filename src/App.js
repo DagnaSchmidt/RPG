@@ -12,6 +12,7 @@ import "./styles/Versus.css";
 import "./styles/CharacterSelection.css";
 import "./styles/Welcome.css";
 import "./styles/Battle.css";
+import './styles/Error.css';
 
 function App() {
   const [name, setName] = useState("");
