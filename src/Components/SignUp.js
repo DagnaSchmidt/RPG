@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import '../styles/Error.css';
 
 const SignUp = ({name, setName, password, setPassword, score, setScore, battlesWon, setBattlesWon, battlesLost, setBattlesLost, usersList, setUsersList, logOut}) => {
   const [formData, setFormData] = React.useState(
@@ -21,15 +22,22 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
     })
   }
 
+  const [error, setError] = React.useState(false)
+
   function handleSubmit(event){
     event.preventDefault();
-    //create function to check if username already doesn't exist in database
-    setName(formData.name);
+    const names = usersList.map((item) => item.name);
+
+    if(names.includes(formData.name)){
+      setError(true)
+    }else{
+      setName(formData.name);
     setPassword(formData.password);
     setScore(0);
     setBattlesWon(0);
     setBattlesLost(0);
     setForm(false);
+    }
   }
 
   return (
@@ -59,6 +67,10 @@ const SignUp = ({name, setName, password, setPassword, score, setScore, battlesW
       <button className='welcome-btn btn-link'>
         <Link to="/">return</Link>
       </button>
+      <div className={`error-message ${error && "display"}`} style={{top: "200px", left: "400px"}} >
+          <h3>This user name already exist!</h3>
+          <button className='welcome-btn btn-link' onClick={() => setError(false)}>Return</button>
+        </div>
       </div>
        : 
        <div>
