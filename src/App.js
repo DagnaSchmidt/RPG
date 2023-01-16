@@ -69,7 +69,7 @@ function App() {
           <Route path='/characterselection' element={<CharacterSelection name={name} yourPokemon={yourPokemon} setYourPokemon={setYourPokemon} />} />
           <Route path='/opponentselection' element={<OpponentSelection oppoPokemon={oppoPokemon} setOppoPokemon={setOppoPokemon}/>} />
           <Route path='/versus' element={<Versus yourPokemon={yourPokemon} oppoPokemon={oppoPokemon} />} />
-          <Route path='/battle' element={<Battle name={name} characterName={characterName} setCharacterName={setCharacterName} characterLifePoints={characterLifePoints} setCharacterLifePoints={setCharacterLifePoints} characterImage={characterImage} setCharacterImage={setCharacterImage} opponentName={opponentName} setOpponentName={setOpponentName} opponentLifePoints={opponentLifePoints} setOpponentLifePoints={setOpponentLifePoints} opponentImage={opponentImage} setOpponentImage={setOpponentImage} />} />
+          <Route path='/battle' element={<Battle logOut={logOut} name={name} characterName={characterName} setCharacterName={setCharacterName} score={score} setScore={setScore} battlesWon={battlesWon} setBattlesWon={setBattlesWon} battlesLost={battlesLost} setBattlesLost={setBattlesLost} characterLifePoints={characterLifePoints} setCharacterLifePoints={setCharacterLifePoints} characterImage={characterImage} setCharacterImage={setCharacterImage} opponentName={opponentName} setOpponentName={setOpponentName} opponentLifePoints={opponentLifePoints} setOpponentLifePoints={setOpponentLifePoints} opponentImage={opponentImage} setOpponentImage={setOpponentImage} />} />
         </Routes>
       </BrowserRouter>
     </div>

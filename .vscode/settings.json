@@ -9,6 +9,7 @@
         "opponentselection",
         "pokemons",
         "signin",
-        "usermenu"
+        "usermenu",
+        "winlose"
     ]
 }
