@@ -4,32 +4,28 @@
     font-weight: 700;
     font-size: 80px;
     text-align: center;
+    font-family: VT323;
 }
 
 .container-battle {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    padding: 2rem;
-    width: 100%;
 }
 
 .container-battle-child {
     position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     margin: 20px;
+    font-family: VT323;
 }
 
 .battle-btns {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-
-}
-
-.battle-btn {
-    margin: 30px;
-    background-color: black !important;
 }

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
-//This pokemonImg will be removed once the actual images populated through the state
-import pokemonImg from "../assets/images/pokemon.gif";
 
 const Battle = ({name, logOut, characterName, characterLifePoints, characterImage, opponentName, opponentLifePoints, score, setScore, opponentImage, battlesWon, setBattlesWon, battlesLost, setBattlesLost, setCharacterLifePoints, setOpponentLifePoints }) => {
     
@@ -78,27 +76,27 @@ const Battle = ({name, logOut, characterName, characterLifePoints, characterImag
             : 
             <div>
                 <h1 className='battle-heading'>Pokemon Battle</h1>
-            <div className='container-battle'>
-                <div className='container-battle-child'>
-                    <div>User Name: {characterName}</div>
-                    <div>User Life points: {characterLP}</div>
-                    <img src={pokemonImg} alt="pokemon pic" />
+                <div className='container-battle'>
+                    <div className='container-battle-child'>
+                        <h4>User Name: <b>{characterName}</b></h4>
+                        <h4>User Life points: <b>{characterLP}</b></h4>
+                        <img src={characterImage} alt="pokemon pic" />
+                    </div>
+                    <div className='container-battle-child'>
+                        <h4>Opponent Name: <b>{opponentName}</b></h4>
+                        <h4>Opponent Life points: <b>{opponentLP}</b></h4>
+                        <img src={opponentImage} alt="pokemon pic" />
+                    </div>
                 </div>
-                <div className='container-battle-child'>
-                    <div>Opponent Name: {opponentName}</div>
-                    <div>Opponent Life points: {opponentLP}</div>
-                    <img src={pokemonImg} alt="pokemon pic" />
-                </div>
-            </div>
 
-            <div className='battle-btns'>
-                <Button className='battle-btn' onClick={fight}>
-                    <Link className='btn-link'>Fight</Link>
-                </Button>
-                <Button className='battle-btn' onClick={heal}>
-                    <Link className='btn-link'>Heal</Link>
-                </Button>
-            </div>
+                <div className='battle-btns'>
+                    <Button className='welcome-btn btn-link' onClick={fight}>
+                        Fight
+                    </Button>
+                    <Button className='welcome-btn btn-link' onClick={heal}>
+                        Heal
+                    </Button>
+                </div>
             </div>} 
         </section>
     );
