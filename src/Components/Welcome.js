@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import welcomeImg from "../assets/images/pokemon.gif";
+import welcomeImg from "../assets/images/pokemontwo.gif";
 import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,11 +14,12 @@ const Welcome = () => {
           <Link className='btn-link' to="/login">Log In</Link>
         </Button>
         <Button className='welcome-btn'>
-          <Link className='btn-link' to="/signup">Sign Up</Link>
-        </Button>
-        <Button className='welcome-btn'>
           <Link className='btn-link' to="/characterselection">New Adventure</Link>
         </Button>
+        <Button className='welcome-btn'>
+          <Link className='btn-link' to="/signup">Sign Up</Link>
+        </Button>
+      
       </div>
     </section>
   )
