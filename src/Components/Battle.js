@@ -62,7 +62,7 @@ const Battle = ({name, logOut, characterName, characterLifePoints, characterImag
             setIsOver(true)
         }
         if (characterLP <= 0){
-            setBattlesLost(battlesLost -1)
+            setBattlesLost(battlesLost +1)
             setCharacterLifePoints(-10)
             setWon(false)
         }
