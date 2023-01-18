@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
 
+
 .battle-heading {
     font-weight: 700;
     font-size: 80px;
@@ -10,9 +11,12 @@
 .container-battle {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
+    font-family: VT323;
+   
+   
 }
 
 .container-battle-child {
@@ -28,4 +32,5 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }

@@ -7,18 +7,43 @@ const Battle = ({name, logOut, characterName, characterLifePoints, characterImag
     const [characterLP, setCharacterLP] = useState(characterLifePoints);
     const [opponentLP, setOpponentLP] = useState(opponentLifePoints);
     const [currentPlayer, setCurrentPlayer] = useState(characterName);
+    const [currentTurn, setCurrentTurn] = useState("Your");
     const getRandomNumber = () => {
-        return Math.floor(Math.random() * 20);
+        return Math.floor(Math.random() * (30 - 20) + 20); 
     }
+    const playTurn = async () => {
+        if (currentPlayer === opponentName) {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            const actionNumber = getRandomNumber();
+            if (actionNumber > 25) {
+                heal();
+            }
+            else {
+                fight();
+            }
+        }
+    };
+
+    const endTurn = () => {
+        if (currentPlayer === characterName) {
+            setCurrentPlayer(opponentName)
+            setCurrentTurn("Opponent's")
+        }
+        else {
+            setCurrentPlayer(characterName)
+            setCurrentTurn("Your")
+        }
+    };
+
     const fight = () => {
         if (currentPlayer === characterName) {
             setOpponentLP(opponentLP - getRandomNumber());
-            setOpponentLifePoints(opponentLP)
         }
         else {
             setCharacterLP(characterLP - getRandomNumber());
         }
-    }
+        endTurn()
+    };
 
     const heal = () => {
         if (currentPlayer === characterName) {
@@ -27,26 +52,30 @@ const Battle = ({name, logOut, characterName, characterLifePoints, characterImag
         else {
             setOpponentLP(opponentLP + getRandomNumber());
         }
+        endTurn()
     }
 
     const [isOver, setIsOver] = useState(false);
     const [won, setWon] = useState();
     useEffect(() => {
-        if(characterLP <= 0 || opponentLP <= 0){
+        if (characterLP <= 0 || opponentLP <= 0){
             setIsOver(true)
         }
-        if(characterLP <= 0){
+        if (characterLP <= 0){
             setBattlesLost(battlesLost -1)
             setCharacterLifePoints(-10)
             setWon(false)
         }
-        if(opponentLP <= 0){
+        if (opponentLP <= 0){
             setBattlesWon(battlesWon +1)
             setScore(score +1)
             setOpponentLifePoints(-10)
             setWon(true)
         }
-    }, [characterLP, opponentLP])
+        if (!isOver) {
+            playTurn()
+        }
+    }, [currentPlayer])
 
     return (
         <section>
@@ -82,6 +111,9 @@ const Battle = ({name, logOut, characterName, characterLifePoints, characterImag
                         <h4>User Life points: <b>{characterLP}</b></h4>
                         <img src={characterImage} alt="pokemon pic" />
                     </div>
+                    <div>
+                        <h4>{currentTurn} turn</h4>
+                    </div>
                     <div className='container-battle-child'>
                         <h4>Opponent Name: <b>{opponentName}</b></h4>
                         <h4>Opponent Life points: <b>{opponentLP}</b></h4>
@@ -90,10 +122,10 @@ const Battle = ({name, logOut, characterName, characterLifePoints, characterImag
                 </div>
 
                 <div className='battle-btns'>
-                    <Button className='welcome-btn btn-link' onClick={fight}>
+                    <Button className='welcome-btn btn-link' onClick={fight} disabled={currentPlayer === opponentName}>
                         Fight
                     </Button>
-                    <Button className='welcome-btn btn-link' onClick={heal}>
+                    <Button className='welcome-btn btn-link' onClick={heal} disabled={currentPlayer === opponentName}>
                         Heal
                     </Button>
                 </div>
