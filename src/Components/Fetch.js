@@ -54,7 +54,7 @@ const Fetch = (props) => {
                     <p key={character.id} onClick={()=>props.getPokemon(character)}>
                         <div className="container-characters">
                         {character.name}
-                        <img src={character.image}></img>
+                        <img src={character.image} alt=""></img>
                         </div>
                     </p>            
                 </div>
